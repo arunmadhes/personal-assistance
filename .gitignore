@@ -1,0 +1,6 @@
+.env
+.env.*
+!.env.example
+.secrets.dpapi.json
+**/__pycache__/
+*.py[cod]

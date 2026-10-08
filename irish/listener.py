@@ -13,6 +13,6 @@ def run_listener_loop():
 
             print("You:", command)
 
-            response = process_command(command)
+            response = "".join(process_command(command))
 
             print("Irish:", response)

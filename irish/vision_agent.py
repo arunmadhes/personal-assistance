@@ -51,5 +51,10 @@ def describe_scene():
     if not detected:
         yield "I don't see anything clearly."
     else:
-        unique = list(set(detected))
-        yield "I see: " + ", ".join(unique)
+        unique = list(dict.fromkeys(detected))
+        prompt = (
+            "Describe the visible scene briefly using only these detected objects. "
+            "Do not claim details that are not supported by the list.\n"
+            f"Detected objects: {', '.join(unique)}"
+        )
+        yield from ask_ai(prompt)

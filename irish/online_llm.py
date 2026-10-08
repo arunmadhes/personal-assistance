@@ -3,9 +3,11 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 from openai import OpenAI
+from secret_store import load_protected_secrets
 
 # Always load .env from the same folder as this script
 load_dotenv(dotenv_path=Path(__file__).parent / ".env")
+load_protected_secrets()
 
 PROVIDER = "groq"
 
